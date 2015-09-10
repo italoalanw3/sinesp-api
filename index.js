@@ -59,12 +59,14 @@ exports.handler = function(event, context) {
 				/** Se não ocorrer nenhum erro */
 				if (error===null) {
 					/** Faz o parse do XML recebido */
-					parseXML(body, function (err, result) {
-    					resultado = result['soap:Envelope']['soap:Body'][0]['ns2:getStatusResponse'][0]['return'][0];
+					parseXML(body, {
+						explicitArray: false
+					}, function (err, result) {
+    					resultado = result['soap:Envelope']['soap:Body']['ns2:getStatusResponse']['return'];
 					});
 
 					/** Retorna para o Lambda o resultado final */
-					context.succeed(JSON.stringify(resultado));
+					context.succeed(resultado);
 				/** Retorna o erro que ocorreu na chamada (se houve) */
 				} else {
 					context.fail(error);
