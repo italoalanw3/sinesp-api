@@ -6,7 +6,7 @@ exports.handler = function(event, context) {
 
 	/** Verifica se o secret veio na requisição. Se não tiver
 		vindo, utiliza o secret padrão */
-	if (!event.hasOwnProperty('secret')) {
+	if (!event.hasOwnProperty('secret') || event.secret.length==0) {
 		var secret = 'shienshenlhq';
 	} else {
 		var secret = event.secret;
