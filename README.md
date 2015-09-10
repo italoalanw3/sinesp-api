@@ -22,3 +22,11 @@ O formato de retorno da API é em JSON.
 **Faça seus próprios testes**
 
 Para testar a função em ambiente de desenvolvimento local, utilize [node-lambda](https://github.com/rebelmail/node-lambda).
+
+Para testar online, faça uma chamada no serviço exposto na AWS:
+
+`
+curl --header "x-api-key: 4tktVFInVG5rbBXDxn9zG6sk0kTkMfqk4jYkF56q" https://g8i1u4lvwl.execute-api.us-east-1.amazonaws.com/prod/consultaPlaca?placa=CMW8201
+`
+
+Como esta é uma API de demonstração, está limitada para o máximo de 1 chamada por segundo.
