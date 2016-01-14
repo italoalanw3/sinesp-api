@@ -1,3 +1,5 @@
+#ATENÇÃO: O SINESP DESABILITOU O WEBSERVICE UTILIZADO NESTA IMPLEMENTAÇÃO. UTILIZE ESTE REPOSITÓRIO SOMENTE COMO REFERÊNCIA.
+
 # SINESP API
 
 Função para plataforma AWS Lambda para realizar a consulta de placas de veículos na base de dados do SINESP.
