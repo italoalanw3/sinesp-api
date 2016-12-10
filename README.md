@@ -1,8 +1,6 @@
-#ATENÇÃO: O SINESP DESABILITOU O WEBSERVICE UTILIZADO NESTA IMPLEMENTAÇÃO. UTILIZE ESTE REPOSITÓRIO SOMENTE COMO REFERÊNCIA.
-
 # SINESP API
 
-Função para plataforma AWS Lambda para realizar a consulta de placas de veículos na base de dados do SINESP.
+API em nodejs para a consulta de placas de veículos na base de dados do SINESP.
 
 **Como funciona**
 
@@ -19,16 +17,34 @@ Na resposta, estão incluídas as seguintes informações:
 - municipio: Cidade onde a placa está registrada
 - chassi: Últimos 5 dígitos do chassi do veículo
 
-O formato de retorno da API é em JSON.
-
-**Faça seus próprios testes**
-
-Para testar a função em ambiente de desenvolvimento local, utilize [node-lambda](https://github.com/rebelmail/node-lambda).
-
-Para testar online, faça uma chamada no serviço exposto na AWS:
+O formato de retorno da API é em JSON. Exemplo:
 
 `
-curl --header "x-api-key: 4tktVFInVG5rbBXDxn9zG6sk0kTkMfqk4jYkF56q" https://g8i1u4lvwl.execute-api.us-east-1.amazonaws.com/prod/consultaPlaca?placa=CMW8201
+{
+  "codigoRetorno": "0",
+  "mensagemRetorno": "Sem erros.",
+  "codigoSituacao": "0",
+  "situacao": "Sem restrição",
+  "modelo": "FORD/ESCORT 1.8 XR3",
+  "marca": "FORD/ESCORT 1.8 XR3",
+  "cor": "CINZA",
+  "ano": "1990",
+  "anoModelo": "1990",
+  "placa": "AAA0001",
+  "data": "10/12/2016 às 14:49:22",
+  "uf": "PR",
+  "municipio": "CURITIBA",
+  "chassi": "************49500"
+}
 `
 
-Como esta é uma API de demonstração, está limitada para o máximo de 1 chamada por segundo.
+**Como usar**
+
+Para usar a API, execute o arquivo index.js: `nodejs index.js`
+
+Com o servidor rodando, faça uma requisição no seu navegador: `http://localhost:8080/api/consultaPlaca?placa=AAA0001`. Se tudo der certo, você verá o resultado na da chamada na tela.
+
+
+**Observação**
+
+Antigamente este repositório servia uma função para rodar no ambiente Lambda da AWS com o mesmo propósito. O motivo de não utilizar mais é porque o servidor do SINESP barra requisições feitas de ambientes externos. Como atualmente o serviço Lambda não existe na região de São Paulo (sa-east-1), as requisições não funcionariam corretamente.
