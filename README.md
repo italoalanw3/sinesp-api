@@ -19,7 +19,7 @@ Na resposta, estão incluídas as seguintes informações:
 
 O formato de retorno da API é em JSON. Exemplo:
 
-`
+```
 {
   "codigoRetorno": "0",
   "mensagemRetorno": "Sem erros.",
@@ -36,7 +36,7 @@ O formato de retorno da API é em JSON. Exemplo:
   "municipio": "CURITIBA",
   "chassi": "************49500"
 }
-`
+```
 
 **Como usar**
 
