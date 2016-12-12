@@ -2,6 +2,8 @@
 
 API em nodejs para a consulta de placas de veículos na base de dados do SINESP.
 
+**Módulo NPM: Este repositório foi disponibilizado como uma biblioteca para uso com npm. Por favor, acesse https://www.npmjs.com/package/sinesp-nodejs para visualizar.**
+
 **Como funciona**
 
 Faça uma chamada passando uma placa no formato AAAA1234 e a função faz a pesquisa no serviço SOAP do SINESP e retorna os dados do veículo.
