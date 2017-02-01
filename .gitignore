@@ -1,4 +1,8 @@
 event.json
 node_modules/
+<<<<<<< HEAD
 *.log
 /daemon
+=======
+*.log
+>>>>>>> b2b71b67bb511ed373da1a52761504237685f7ff

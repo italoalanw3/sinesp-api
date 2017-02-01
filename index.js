@@ -23,11 +23,8 @@ router.get('/consultaPlaca', function(req, res) {
 	/** Criptografa a placa usando a chave do aplicativo */
 	var token = crypto.createHmac('sha1', placa+secret).update(placa).digest('hex');
 
-	console.log('token', token);
-	console.log('uuidV4', uuidV4());
 	/** Gerar a data da requisição */
 	var data = new Date().toISOString().replace("T", " ").substr(0, 19);
-	console.log('data', data);
 
 	/** Cria o XML de chamada do serviço SOAP */
 	var xml = '<?xml version="1.0" encoding="utf-8" standalone="yes" ?>\
