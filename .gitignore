@@ -1,0 +1,4 @@
+event.json
+node_modules/
+*.log
+/daemon
